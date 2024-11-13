@@ -1,5 +1,15 @@
-<% if(!locals.categories || locals.categories.length === 0) { %>
-<h1>No categories found</h1>
-<% } else { %> <% locals.categories.forEach(category => { %>
-<a href="/categories/<%= category.id %>"> <%= category.name %> </a>
-<% }); } %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Inventory Management</title>
+  </head>
+  <body>
+    <% if(!locals.categories || locals.categories.length === 0) { %>
+    <h1>No categories found</h1>
+    <% } else { %> <% locals.categories.forEach(category => { %>
+    <a href="/categories/<%= category.id %>"> <%= category.name %> </a>
+    <% }); } %>
+  </body>
+</html>

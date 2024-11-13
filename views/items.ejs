@@ -1,5 +1,17 @@
-<% if(!locals.items || locals.items.length === 0) { %>
-<h1>No items found</h1>
-<% } else { %> <% locals.items.forEach(item => { %>
-<a> <%= item.name %> - <%= item.price %>$ </a>
-<% }); } %>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= locals.categoryName %> - Items</title>
+  </head>
+  <body>
+    <% if(!locals.items || locals.items.length === 0) { %>
+    <h1>No items found</h1>
+    <% } else { %>
+    <h1><%= locals.categoryName %></h1>
+    <% locals.items.forEach(item => { %>
+    <a> <%= item.name %> - <%= item.price %>$ </a>
+    <% }); } %>
+  </body>
+</html>

@@ -10,4 +10,9 @@ async function getItemsByCategoryId(categoryId) {
   return rows;
 }
 
-export default { getCategories, getItemsByCategoryId };
+async function getCategoryName(categoryId) {
+  const { rows } = await pool.query("SELECT name FROM categories WHERE id = ($1)", [categoryId]);
+  return rows[0].name || null;
+}
+
+export default { getCategories, getItemsByCategoryId, getCategoryName };
