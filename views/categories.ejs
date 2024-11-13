@@ -9,7 +9,11 @@
     <% if(!locals.categories || locals.categories.length === 0) { %>
     <h1>No categories found</h1>
     <% } else { %> <% locals.categories.forEach(category => { %>
-    <a href="/categories/<%= category.id %>"> <%= category.name %> </a>
+    <a href="/categories/<%= category.id %>"> <%= category.name %> </a> -
+    <a href="/categories/<%= category.id %>/update">Update</a>
+    <br />
     <% }); } %>
+    <br />
+    <a href="/categories/new">Create a new category</a>
   </body>
 </html>

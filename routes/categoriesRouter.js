@@ -1,10 +1,20 @@
 import { Router } from "express";
-import { getCategories } from "../controllers/categoriesController.js";
+import {
+  categoryCreatePost,
+  categoriesGet,
+  categoryCreateGet,
+  categoryUpdateGet,
+  categoryUpdatePost,
+} from "../controllers/categoriesController.js";
 import { getItemsByCategoryId } from "../controllers/itemsController.js";
 
 const categoriesRouter = Router();
 
-categoriesRouter.get("/", getCategories);
+categoriesRouter.get("/", categoriesGet);
+categoriesRouter.get("/new", categoryCreateGet);
+categoriesRouter.post("/new", categoryCreatePost);
 categoriesRouter.get("/:id", getItemsByCategoryId);
+categoriesRouter.get("/:id/update", categoryUpdateGet);
+categoriesRouter.post("/:id/update", categoryUpdatePost);
 
 export default categoriesRouter;
