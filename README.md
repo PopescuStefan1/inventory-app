@@ -45,3 +45,8 @@ node db/populatedb.js
 npm start
 ```
 8. **Access the App:** Open your browser and go to http://localhost:5000.
+
+## Usage
+1. **View Categories:** On the homepage, view the available categories.
+2. **Browse Items:** Click on a category to see a list of items within it.
+3. **Manage Inventory:** Use the CRUD options to add, edit, or delete categories and items as desired.
