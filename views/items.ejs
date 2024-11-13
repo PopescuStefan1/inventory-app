@@ -11,7 +11,8 @@
     <% } else { %>
     <h1><%= category.name %></h1>
     <% items.forEach(item => { %>
-    <a> <%= item.name %> - <%= item.price %>$ </a>
+    <a> <%= item.name %> - <%= item.price %>$ </a> - <a href="/items/<%= item.id %>/update">Update</a>
+    <br />
     <% }); } %>
     <br /><br />
     <a href="/">Back to home page</a>

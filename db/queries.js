@@ -20,6 +20,11 @@ async function createCategory(name) {
   return rowCount > 0;
 }
 
+async function getItem(itemId) {
+  const { rows } = await pool.query("SELECT * FROM items WHERE id = ($1)", [itemId]);
+  return rows[0] || null;
+}
+
 async function updateCategory(id, name) {
   await pool.query("UPDATE categories SET name = ($1) WHERE id = ($2)", [name, id]);
 }
@@ -29,11 +34,22 @@ async function createItem(name, price, categoryId) {
   await pool.query("INSERT INTO items (name, price, category_id) VALUES ($1, $2, $3)", [name, price, categoryId]);
 }
 
+async function updateItem(itemId, name, price, categoryId) {
+  await pool.query("UPDATE items SET name = ($1), price = ($2), category_id = ($3) WHERE id = ($4)", [
+    name,
+    price,
+    categoryId,
+    itemId,
+  ]);
+}
+
 export default {
   getCategories,
   getItemsByCategoryId,
   getCategory,
-  createNewCategory: createCategory,
+  createCategory,
+  getItem,
   updateCategory,
   createItem,
+  updateItem,
 };

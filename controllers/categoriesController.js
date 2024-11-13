@@ -10,7 +10,7 @@ export const categoryCreateGet = (req, res) => {
 };
 
 export const categoryCreatePost = async (req, res) => {
-  await db.createNewCategory(req.body.name);
+  await db.createCategory(req.body.name);
   res.redirect("/");
 };
 

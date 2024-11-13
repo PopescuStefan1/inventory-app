@@ -17,3 +17,17 @@ export const itemCreatePost = async (req, res) => {
   await db.createItem(name, Number(price), categoryId ? Number(categoryId) : null);
   res.redirect("/");
 };
+
+export const itemUpdateGet = async (req, res) => {
+  const itemId = req.params.id;
+  const item = await db.getItem(itemId);
+  const categories = await db.getCategories();
+  res.render("updateItem", { item, categories });
+};
+
+export const itemUpdatePost = async (req, res) => {
+  const itemId = req.params.id;
+  const { name, price, categoryId } = req.body;
+  await db.updateItem(itemId, name, Number(price), categoryId ? Number(categoryId) : null);
+  res.redirect("/");
+};
