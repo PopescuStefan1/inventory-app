@@ -2,6 +2,7 @@ import express, { urlencoded } from "express";
 import "dotenv/config";
 import indexRouter from "./routes/indexRouter.js";
 import categoriesRouter from "./routes/categoriesRouter.js";
+import itemsRouter from "./routes/itemsRouter.js";
 
 const app = express();
 
@@ -10,6 +11,7 @@ app.use(urlencoded({ extended: true }));
 
 app.use("/", indexRouter);
 app.use("/categories", categoriesRouter);
+app.use("/items", itemsRouter);
 
 app.listen(5000, () => {
   console.log("App listening on port 5000");
