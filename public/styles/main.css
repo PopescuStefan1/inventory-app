@@ -31,7 +31,6 @@ a {
   grid-template-columns: 1fr 1fr;
   column-gap: 0.5rem;
   row-gap: 1rem;
-  margin-bottom: 5rem;
 }
 
 .grid-item,
@@ -82,6 +81,7 @@ a {
 }
 
 .action-buttons-div {
+  margin-top: 5rem;
   display: flex;
   align-items: center;
   justify-content: center;
