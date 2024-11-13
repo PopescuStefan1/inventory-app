@@ -4,15 +4,20 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>New Category</title>
+    <link rel="stylesheet" href="/styles/main.css" />
   </head>
   <body>
-    <h1>Create Category</h1>
-    <form method="POST" action="">
-      <label for="name">Name: </label>
-      <input type="text" name="name" id="name" />
-      <button type="submit">Submit</button>
-    </form>
-    <br />
-    <a href="/">Back to home</a>
+    <div id="container">
+      <h1 class="title">Create Category</h1>
+      <form method="POST" action="">
+        <label for="name">Name: </label>
+        <input type="text" name="name" id="name" />
+        <button type="submit">Submit</button>
+      </form>
+      <br />
+      <div class="action-buttons-div">
+        <a class="action-button" href="/">Back to home</a>
+      </div>
+    </div>
   </body>
 </html>
