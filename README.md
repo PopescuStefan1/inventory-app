@@ -20,3 +20,28 @@ A simple, yet powerful Inventory Management application built using Node.js, Exp
 git clone https://github.com/PopescuStefan1/inventory-app.git
 cd inventory-app
 ```
+2. **Install dependencies:**
+```
+npm install
+```
+4. **Environment Variables:** Create a ```.env``` file in the root directory and set up the following environment variables:
+```
+USERNAME=your_database_user
+PASSWORD=your_database_password
+HOST=your_database_host
+DB=your_database_name
+```
+5. **Database Setup:** Create a PostgreSQL database (This app assumes you will use the default database port 5432. If you use a different port, you will need to edit [pool.js](db/pool.js)):
+```
+psql
+CREATE DATABASE your_database_name;
+```
+6. **Populate Database:** Run the [Database population script](db/populatedb.js). Make sure to replace the connection string with your own credentials.
+```
+node db/populatedb.js
+```
+7. **Start the Server:**
+```
+npm start
+```
+8. **Access the App:** Open your browser and go to http://localhost:5000.
