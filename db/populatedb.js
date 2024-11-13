@@ -71,7 +71,7 @@ VALUES
 async function main() {
   console.log("seeding...");
   const client = new Client({
-    connectionString: `postgresql://<role_name>:<role_password>@<host>:5432/inventory_management`, // Add your role_name, role_password and host here
+    connectionString: `postgresql://<role_name>:<role_password>@<host>:5432/<database>`, // Add your role_name, role_password, host and database here
   });
   await client.connect();
   await client.query(SQL);

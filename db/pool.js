@@ -5,6 +5,6 @@ export default new Pool({
   user: process.env.USERNAME, // Add your role_name here
   password: process.env.PASSWORD, // Add your role_password to here
   host: process.env.HOST, // Add your host here ("localhost" if running locally)
-  database: "inventory_management",
+  database: process.env.DB, // Add your database here ("localhost" if running locally)
   port: 5432,
 });
