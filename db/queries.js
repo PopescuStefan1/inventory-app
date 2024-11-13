@@ -29,6 +29,10 @@ async function updateCategory(id, name) {
   await pool.query("UPDATE categories SET name = ($1) WHERE id = ($2)", [name, id]);
 }
 
+async function deleteCategory(categoryId) {
+  await pool.query("DELETE FROM categories WHERE id = ($1)", [categoryId]);
+}
+
 async function createItem(name, price, categoryId) {
   await pool.query("INSERT INTO items (name, price, category_id) VALUES ($1, $2, $3)", [name, price, categoryId]);
 }
@@ -51,8 +55,9 @@ export default {
   getItemsByCategoryId,
   getCategory,
   createCategory,
-  getItem,
   updateCategory,
+  deleteCategory,
+  getItem,
   createItem,
   updateItem,
   deleteItem,

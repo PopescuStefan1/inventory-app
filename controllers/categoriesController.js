@@ -26,3 +26,9 @@ export const categoryUpdatePost = async (req, res) => {
   await db.updateCategory(categoryId, newCategoryName);
   res.redirect("/");
 };
+
+export const categoryDeletePost = async (req, res) => {
+  const categoryId = req.params.id;
+  await db.deleteCategory(categoryId);
+  res.redirect("/");
+};
