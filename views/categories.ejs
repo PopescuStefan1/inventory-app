@@ -16,8 +16,9 @@
         <% locals.categories.forEach(category => { %>
         <a class="grid-item" href="/categories/<%= category.id %>"> <%= category.name %> </a>
         <a class="grid-item" href="/categories/<%= category.id %>/update">Update</a>
-        <% }); } %>
+        <% }); %>
       </div>
+      <% } %>
       <div class="action-buttons-div">
         <a class="action-button" href="/categories/new">Create a category</a>
         <a class="action-button" href="/items/new">Create an item</a>
