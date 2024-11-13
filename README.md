@@ -17,7 +17,7 @@ A simple, yet powerful Inventory Management application built using Node.js, Exp
 ## Live Demo
 
 Check out the live version of the app hosted on Railway:  
-[Live Demo on Railway](https://your-app-name.up.railway.app](https://inventory-app-production-c3a1.up.railway.app)
+[Live Demo on Railway](https://inventory-app-production-c3a1.up.railway.app)
 
 ## Local Installation
 1. **Clone the repository:**
