@@ -2,9 +2,9 @@ import pkg from "pg";
 const { Pool } = pkg;
 
 export default new Pool({
-  host: process.env.DB_HOST,
   user: process.env.USERNAME,
-  database: process.env.DB_NAME,
   password: process.env.PASSWORD,
+  host: "localhost",
+  database: "inventory_management",
   port: 5432,
 });
