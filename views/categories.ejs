@@ -7,20 +7,21 @@
     <link rel="stylesheet" href="/styles/main.css" />
   </head>
   <body>
-    <div id="categories-container">
+    <div id="container">
       <% if(!locals.categories || locals.categories.length === 0) { %>
-      <h1 class="categories-title">No categories found</h1>
+      <h1 class="title">No categories found</h1>
       <% } else { %>
-
-      <h1 class="categories-title">Categories:</h1>
-      <div id="categories-grid">
+      <h1 class="title">Categories:</h1>
+      <div id="grid">
         <% locals.categories.forEach(category => { %>
-        <a class="categories-grid-item" href="/categories/<%= category.id %>"> <%= category.name %> </a>
-        <a class="categories-grid-item" href="/categories/<%= category.id %>/update">Update</a>
+        <a class="grid-item" href="/categories/<%= category.id %>"> <%= category.name %> </a>
+        <a class="grid-item" href="/categories/<%= category.id %>/update">Update</a>
         <% }); } %>
       </div>
-      <a class="create-button" href="/categories/new">Create a category</a>
-      <a class="create-button" href="/items/new">Create an item</a>
+      <div class="action-buttons-div">
+        <a class="action-button" href="/categories/new">Create a category</a>
+        <a class="action-button" href="/items/new">Create an item</a>
+      </div>
     </div>
   </body>
 </html>

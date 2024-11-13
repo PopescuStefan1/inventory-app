@@ -7,15 +7,20 @@
     <link rel="stylesheet" href="/styles/main.css" />
   </head>
   <body>
-    <% if(!items || items.length === 0) { %>
-    <h1>No items found</h1>
-    <% } else { %>
-    <h1><%= category.name %></h1>
-    <% items.forEach(item => { %>
-    <a> <%= item.name %> - <%= item.price %>$ </a> - <a href="/items/<%= item.id %>/update">Update</a>
-    <br />
-    <% }); } %>
-    <br /><br />
-    <a href="/">Back to home page</a>
+    <div id="container">
+      <% if(!items || items.length === 0) { %>
+      <h1 class="title">No items found</h1>
+      <% } else { %>
+      <h1 class="title"><%= category.name %></h1>
+      <div id="grid">
+        <% items.forEach(item => { %>
+        <a class="grid-item"> <%= item.name %> - <%= item.price %>$ </a>
+        <a class="grid-item" href="/items/<%= item.id %>/update">Update</a>
+        <% }); } %>
+      </div>
+      <div class="action-buttons-div">
+        <a class="action-button" href="/">Back to home page</a>
+      </div>
+    </div>
   </body>
 </html>
