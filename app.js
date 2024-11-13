@@ -5,8 +5,6 @@ import indexRouter from "./routes/indexRouter.js";
 import categoriesRouter from "./routes/categoriesRouter.js";
 import itemsRouter from "./routes/itemsRouter.js";
 
-console.log("Env:", process.env.USERNAME, process.env.PASSWORD, process.env.DB, process.env.HOST);
-
 const app = express();
 
 app.set("view engine", "ejs");
