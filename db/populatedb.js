@@ -4,11 +4,6 @@ import pkg from "pg";
 const { Client } = pkg;
 
 const SQL = `
-CREATE TABLE IF NOT EXISTS usernames (
-  id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY,
-  username VARCHAR ( 255 )
-);
-
 CREATE TABLE IF NOT EXISTS categories ( 
   id INTEGER PRIMARY KEY GENERATED ALWAYS AS IDENTITY, 
   name VARCHAR ( 50 )
