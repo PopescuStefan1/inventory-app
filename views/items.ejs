@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= category.name %> - Items</title>
+    <title><%= locals.category ? category.name : "No category" %> - Items</title>
     <link rel="stylesheet" href="/styles/main.css" />
   </head>
   <body>
@@ -11,13 +11,14 @@
       <% if(!items || items.length === 0) { %>
       <h1 class="title">No items found</h1>
       <% } else { %>
-      <h1 class="title"><%= category.name %></h1>
+      <h1 class="title"><%= locals.category ? category.name : "Items without a category" %></h1>
       <div id="grid">
         <% items.forEach(item => { %>
         <a class="grid-item"> <%= item.name %> - <%= item.price %>$ </a>
         <a class="grid-item" href="/items/<%= item.id %>/update">Update</a>
-        <% }); } %>
+        <% }); %>
       </div>
+      <% } %>
       <div class="action-buttons-div">
         <a class="action-button" href="/">Back to home page</a>
       </div>

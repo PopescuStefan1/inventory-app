@@ -37,3 +37,9 @@ export const itemDeletePost = async (req, res) => {
   await db.deleteItem(itemId);
   res.redirect("/");
 };
+
+export const noCategoryItemsGet = async (req, res) => {
+  console.log("here");
+  const items = await db.getItemsWithoutCategory();
+  res.render("items", { items });
+};

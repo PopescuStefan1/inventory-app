@@ -10,6 +10,11 @@ async function getItemsByCategoryId(categoryId) {
   return rows;
 }
 
+async function getItemsWithoutCategory() {
+  const { rows } = await pool.query("SELECT * FROM items WHERE category_id IS NULL");
+  return rows;
+}
+
 async function getCategory(categoryId) {
   const { rows } = await pool.query("SELECT * FROM categories WHERE id = ($1)", [categoryId]);
   return rows[0] || null;
@@ -53,6 +58,7 @@ async function deleteItem(itemId) {
 export default {
   getCategories,
   getItemsByCategoryId,
+  getItemsWithoutCategory,
   getCategory,
   createCategory,
   updateCategory,
