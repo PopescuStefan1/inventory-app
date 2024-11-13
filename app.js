@@ -1,5 +1,6 @@
 import express, { urlencoded } from "express";
 import "dotenv/config";
+import path from "path";
 import indexRouter from "./routes/indexRouter.js";
 import categoriesRouter from "./routes/categoriesRouter.js";
 import itemsRouter from "./routes/itemsRouter.js";
@@ -7,6 +8,7 @@ import itemsRouter from "./routes/itemsRouter.js";
 const app = express();
 
 app.set("view engine", "ejs");
+app.use(express.static(path.join(import.meta.dirname, "public")));
 app.use(urlencoded({ extended: true }));
 
 app.use("/", indexRouter);

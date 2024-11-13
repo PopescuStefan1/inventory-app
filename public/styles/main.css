@@ -1,0 +1,43 @@
+body {
+  background-color: #1a1a1a;
+  color: #fff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#categories-container {
+  display: flex;
+  flex-direction: column;
+  height: 96vh;
+  width: 96vw;
+  align-items: center;
+  justify-content: center;
+}
+
+#categories-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 0.5rem;
+  row-gap: 1rem;
+}
+
+.categories-grid-item {
+  font-size: 40px;
+  text-transform: capitalize;
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 0.8rem;
+}
+
+.categories-grid-item:hover {
+  color: #1a1a1a;
+  background-color: #fff;
+}
+
+.create-button {
+  margin-top: 2rem;
+}
