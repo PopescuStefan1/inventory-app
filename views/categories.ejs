@@ -9,16 +9,18 @@
   <body>
     <div id="categories-container">
       <% if(!locals.categories || locals.categories.length === 0) { %>
-      <h1>No categories found</h1>
+      <h1 class="categories-title">No categories found</h1>
       <% } else { %>
+
+      <h1 class="categories-title">Categories:</h1>
       <div id="categories-grid">
         <% locals.categories.forEach(category => { %>
         <a class="categories-grid-item" href="/categories/<%= category.id %>"> <%= category.name %> </a>
         <a class="categories-grid-item" href="/categories/<%= category.id %>/update">Update</a>
         <% }); } %>
       </div>
-      <a class="categories-grid-item create-button" href="/categories/new">Create a category</a>
-      <a class="categories-grid-item create-button" href="/items/new">Create a item</a>
+      <a class="create-button" href="/categories/new">Create a category</a>
+      <a class="create-button" href="/items/new">Create an item</a>
     </div>
   </body>
 </html>
