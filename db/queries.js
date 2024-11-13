@@ -30,7 +30,6 @@ async function updateCategory(id, name) {
 }
 
 async function createItem(name, price, categoryId) {
-  console.log(name, price, categoryId);
   await pool.query("INSERT INTO items (name, price, category_id) VALUES ($1, $2, $3)", [name, price, categoryId]);
 }
 
@@ -43,6 +42,10 @@ async function updateItem(itemId, name, price, categoryId) {
   ]);
 }
 
+async function deleteItem(itemId) {
+  await pool.query("DELETE FROM items WHERE id = ($1)", [itemId]);
+}
+
 export default {
   getCategories,
   getItemsByCategoryId,
@@ -52,4 +55,5 @@ export default {
   updateCategory,
   createItem,
   updateItem,
+  deleteItem,
 };

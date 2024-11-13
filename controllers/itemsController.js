@@ -31,3 +31,9 @@ export const itemUpdatePost = async (req, res) => {
   await db.updateItem(itemId, name, Number(price), categoryId ? Number(categoryId) : null);
   res.redirect("/");
 };
+
+export const itemDeletePost = async (req, res) => {
+  const itemId = req.params.id;
+  await db.deleteItem(itemId);
+  res.redirect("/");
+};
