@@ -2,7 +2,9 @@
 
 A simple, yet powerful Inventory Management application built using Node.js, Express, and PostgreSQL. It follows the MVC pattern and uses EJS for the frontend views. The app allows users to manage items by categories, providing full CRUD functionality for both categories and items.
 
-![image](https://github.com/user-attachments/assets/f86c4b80-14fa-43ed-87d3-e87d1118c05b)
+![image](https://github.com/user-attachments/assets/0910f321-6e72-4e94-8e75-0c705c48f16d)
+![image](https://github.com/user-attachments/assets/bb8c4b8b-443c-4155-b66b-20b807719ed6)
+![image](https://github.com/user-attachments/assets/b9a9da68-661a-4b66-a322-45e2ae81d13b)
 
 ## Features
 - **Home Page:** Users can choose a category to view, which then displays all items within that category.
